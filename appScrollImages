@@ -1,0 +1,22 @@
+//合作app轮播效果
+function appScroll(){
+    var appImg = document.querySelectorAll('.app-join ul img'),
+        len = appImg.length,
+        src0 = appImg[0].getAttribute('src');
+    for(var i = 1; i < len; i++){
+        var src = appImg[i].getAttribute('src'),
+            j = i - 1;
+        /*if(i < len-1){
+            appImg[j].setAttribute('src', src);
+        }else{
+            appImg[j].setAttribute('src', src);
+            appImg[len-1].setAttribute('src', src0);
+        }*/
+        appImg[j].setAttribute('src', src);
+        if(i >= len-1){
+            appImg[len-1].setAttribute('src', src0);
+        }
+    }
+}
+
+setInterval(appScroll, 2000);
